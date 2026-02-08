@@ -1,46 +1,8 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Users, Zap, Shield, GitBranch, Layers, Server } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import uprightDashboard from "@/assets/upright-dashboard.png";
-import uprightDiagram from "@/assets/upright-diagram.png";
+import UprightDiagram from "./UprightDiagram";
 
-const requirements = [
-  {
-    icon: Server,
-    title: "Shared Backend Foundation",
-    desc: "Unified C#/.NET Core API layer, auth pipeline, multi-tenant routing & context handling",
-    result: "40% reduction in cross-service integration failures",
-  },
-  {
-    icon: Layers,
-    title: "Shared Frontend System",
-    desc: "TypeScript/JS client libraries, design system alignment, standardized component patterns",
-    result: "Faster frontend development, zero reinventing per team",
-  },
-  {
-    icon: Shield,
-    title: "Shared Cloud Infrastructure",
-    desc: "Containerized .NET services, automated CI/CD, unified deployment pipeline",
-    result: "30% shorter release cycles, same-day repeatable releases",
-  },
-  {
-    icon: GitBranch,
-    title: "Consistent Developer Experience",
-    desc: "API contracts, clear service boundaries, cross-team design review & guidance",
-    result: "Higher delivery quality across the entire org",
-  },
-  {
-    icon: Users,
-    title: "Faster Team Onboarding",
-    desc: "Centralized platform logic, shared services, standardized environment provisioning",
-    result: "New teams productive in days, not weeks",
-  },
-  {
-    icon: Zap,
-    title: "Lower Operational Cost",
-    desc: "Centralized backend logic, shared tooling, observability baked in",
-    result: "Scalable foundation for future products",
-  },
-];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -117,47 +79,13 @@ const UprightSection = () => {
           </a>
         </motion.div>
 
-        {/* Requirements Grid */}
-        <motion.div {...fadeInUp} className="mb-20">
-          <h3 className="font-mono text-lg text-primary mb-8 tracking-wide">
-            What I Delivered
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {requirements.map((req, i) => (
-              <motion.div
-                key={req.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-6 rounded-xl bg-surface border border-border hover:border-primary/30 transition-all duration-300 group"
-              >
-                <req.icon className="w-6 h-6 text-primary mb-4 group-hover:text-highlight transition-colors" />
-                <h4 className="font-mono text-sm font-semibold text-foreground mb-2">
-                  {req.title}
-                </h4>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                  {req.desc}
-                </p>
-                <p className="font-mono text-xs text-primary/80">
-                  → {req.result}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Architecture Diagram */}
+        {/* Platform Architecture Diagram */}
         <motion.div {...fadeInUp}>
           <h3 className="font-mono text-lg text-primary mb-8 tracking-wide">
-            Platform Architecture
+            Platform Requirements & Delivery
           </h3>
           <div className="rounded-xl overflow-hidden border border-border card-glow bg-card p-4 md:p-8">
-            <img
-              src={uprightDiagram}
-              alt="The Upright Project Architecture Diagram"
-              className="w-full max-w-2xl mx-auto object-contain"
-            />
+            <UprightDiagram />
           </div>
         </motion.div>
       </div>

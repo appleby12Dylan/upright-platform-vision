@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import spotheroApp from "@/assets/spothero-app.png";
-import spotheroDiagram from "@/assets/spothero-diagram.png";
+import SpotHeroDiagram from "./SpotHeroDiagram";
 
 const highlights = [
   {
@@ -97,11 +97,7 @@ const SpotHeroSection = () => {
             Platform Engineering Architecture
           </h3>
           <div className="rounded-xl overflow-hidden border border-border card-glow bg-card p-4 md:p-8">
-            <img
-              src={spotheroDiagram}
-              alt="SpotHero Platform Engineering Architecture"
-              className="w-full max-w-xl mx-auto object-contain"
-            />
+            <SpotHeroDiagram />
           </div>
         </motion.div>
       </div>
